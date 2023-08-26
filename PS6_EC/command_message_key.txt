@@ -1,0 +1,49 @@
+*EditorCommunicatorEC send to SketchServerCommunicatorEC (client to server):*
+
+method: sendNewShapeRequest
+command message: "a shapeType x1 y1 x2 y2 ... colorRGBvalue"
+function: sends a request to server to create a new shape with the color of shape and important coordinates
+
+method: sendMoveRequest
+command message: "m shapeID x y"
+function: sends a request to server to move shape with ID shapeID to coordinates x y
+
+method: sendDeleteRequest
+command message: "d shapeID"
+function: sends a request to server to delete shape with ID shapeID
+
+method: sendRecolorRequest
+command message: "r shapeID colorRGBvalue"
+function: sends a request to server to recolor shape with ID shapeID to color with colorRGBvalue RGB value
+
+EXTRA CREDIT:
+
+method: sendFrontRequest
+command message: "f shapeID"
+function: sends a request to server to send shape with ID shapeID in front of all other shapes
+
+method: sendBackRequest
+command message: "b shapeID"
+function: sends a request to server to sent shape with ID shapeID behind all other shapes
+
+*SketchServerCommunicatorEC to EditorCommunicatorEC (server to client):*
+
+command message: "s shapeID shape x1 y1 ... colorRGBvalue"
+function: sends a request to editor to create a new shape with ID shapeID given the following information
+
+command message: "m shapeID x y"
+function: sends a request to editor to move shape with ID shapeID to coordinates x y
+
+command message: "d shapeID"
+function: sends a request to editor to delete shape with ID shapeID
+
+command message: "r shapeID colorRGBvalue"
+function: sends a request to editor to recolor shape with ID shapeID to color with colorRGBvalue RGB value
+
+EXTRA CREDIT:
+
+command message: "f shapeID"
+function: sends a request to editor to send shape with ID shapeID in front of all other shapes
+
+command message: "b shapeID"
+function: sends a request to editor to sent shape with ID shapeID behind all other shapes
